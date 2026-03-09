@@ -8,3 +8,6 @@
 - **Package Refactoring**: Moved all classes from `com.example.examplemod` to `net.yigitguven.profile`.
 - **Metadata Update**: Updated `gradle.properties` and `mods.toml` with correct author (`Yigit Guven`), description, and mod ID.
 - **Main Class**: Renamed `ExampleMod` to `ProfileMod` and cleaned up template registry code.
+- **Licensing**: Changed project license to LGPL 3.0.
+- **Git Configuration**: Added a comprehensive `.gitignore` for Forge/Gradle projects.
+- **CI/CD Automation**: Created a GitHub Actions workflow for automatic Maven publishing to GitHub Packages.
