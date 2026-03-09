@@ -1,0 +1,10 @@
+- **Core API Registry**: Created `ProfileRegistry` and `ProfileComponent` for other mods to register custom profile data.
+- **Networking Layer**: Implemented `S2CProfilePacket` and `ProfileNetwork` to synchronize profile data from server to client.
+- **Profile UI**: Added `ProfileScreen` based on standard Minecraft demo background, capable of displaying dynamic profile components.
+- **Interaction Logic**: Added `ModEvents` to trigger profile opening when right-clicking another player.
+- **Client Access**: Added `ClientAccess` utility for safe client-side screen management.
+- **Mod Identity**: Renamed mod from `examplemod` to `profile`.
+- **Display Name**: Set official display name to `Profile API`.
+- **Package Refactoring**: Moved all classes from `com.example.examplemod` to `net.yigitguven.profile`.
+- **Metadata Update**: Updated `gradle.properties` and `mods.toml` with correct author (`Yigit Guven`), description, and mod ID.
+- **Main Class**: Renamed `ExampleMod` to `ProfileMod` and cleaned up template registry code.
