@@ -12,3 +12,5 @@
 - **CI/CD Automation**: Created a GitHub Actions workflow for automatic Maven publishing to GitHub Packages.
 - **Publishing Fix**: Resolved 422 error on GitHub Packages by standardizing project/artifact names and adding POM metadata.
 - **Code Cleanup**: Resolved deprecation warnings for `FMLJavaModLoadingContext` and `ResourceLocation`.
+- **Solo Testing Support**: Added `/profile view <player>` command for manual verification and self-testing.
+- **Sample Components**: Integrated "Health" and "Experience Level" components as reference implementations.
