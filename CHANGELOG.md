@@ -1,4 +1,4 @@
-- **Publishing Conflict**: Bumped version to `1.0.1` to resolve 409 error on GitHub Packages.
-- **Deprecation Warnings**: Resolved remaining `ResourceLocation` warnings and cleaned up unused imports.
-- **Solo Testing Support**: Added `/profile view <player>` command for manual verification and self-testing.
-- **Sample Components**: Integrated "Health" and "Experience Level" components as reference implementations.
+- **Brand Identity**: Created a sleek "Profile API" text banner logo for use in mod repositories and documentation.
+- **mods.toml**: Added issue tracker URL and display URL.
+- **Version**: Updated to 1.0.2
+- **Documentation**: Created a `README.md` with banners, badges, and project links.
