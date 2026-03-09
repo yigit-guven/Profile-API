@@ -11,17 +11,18 @@ import net.minecraft.world.entity.player.Player;
 public class ProfileNetwork {
     private static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
-        new ResourceLocation("profile", "main"),
-        () -> PROTOCOL_VERSION,
-        PROTOCOL_VERSION::equals,
-        PROTOCOL_VERSION::equals
-    );
+            new ResourceLocation("profile:main"),
+            () -> PROTOCOL_VERSION,
+            PROTOCOL_VERSION::equals,
+            PROTOCOL_VERSION::equals);
 
     public static void init() {
-        CHANNEL.registerMessage(0, S2CProfilePacket.class, S2CProfilePacket::encode, S2CProfilePacket::new, S2CProfilePacket::handle);
+        CHANNEL.registerMessage(0, S2CProfilePacket.class, S2CProfilePacket::encode, S2CProfilePacket::new,
+                S2CProfilePacket::handle);
     }
 
     public static void sendProfileToClient(ServerPlayer receiver, Player targetPlayer) {
-        CHANNEL.send(PacketDistributor.PLAYER.with(() -> receiver), new S2CProfilePacket(ProfileRegistry.getComponents(targetPlayer)));
+        CHANNEL.send(PacketDistributor.PLAYER.with(() -> receiver),
+                new S2CProfilePacket(ProfileRegistry.getComponents(targetPlayer)));
     }
 }

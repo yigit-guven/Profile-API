@@ -193,6 +193,23 @@ publishing {
     publications {
         register('mavenJava', MavenPublication) {
             from components.java
+            artifactId = 'profile'
+            pom {
+                name = 'Profile API'
+                description = 'A library mod for Minecraft Forge that adds a player profile UI.'
+                url = "https://github.com/${System.getenv('GITHUB_REPOSITORY')}"
+                licenses {
+                    license {
+                        name = 'GNU Lesser General Public License v3.0'
+                        url = 'https://www.gnu.org/licenses/lgpl-3.0.txt'
+                    }
+                }
+                scm {
+                    connection = "scm:git:git://github.com/${System.getenv('GITHUB_REPOSITORY')}.git"
+                    developerConnection = "scm:git:ssh://github.com/${System.getenv('GITHUB_REPOSITORY')}.git"
+                    url = "https://github.com/${System.getenv('GITHUB_REPOSITORY')}"
+                }
+            }
         }
     }
     repositories {

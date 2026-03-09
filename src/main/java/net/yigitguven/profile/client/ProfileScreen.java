@@ -9,7 +9,8 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.List;
 
 public class ProfileScreen extends Screen {
-    private static final ResourceLocation BACKGROUND = new ResourceLocation("minecraft", "textures/gui/demo_background.png");
+    private static final ResourceLocation BACKGROUND = new ResourceLocation(
+            "minecraft:textures/gui/demo_background.png");
     private final List<S2CProfilePacket.ProfileData> profileData;
     private int guiWidth = 248;
     private int guiHeight = 166;
@@ -31,12 +32,13 @@ public class ProfileScreen extends Screen {
     public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
         this.renderBackground(guiGraphics);
         guiGraphics.blit(BACKGROUND, leftPos, topPos, 0, 0, guiWidth, guiHeight);
-        
+
         guiGraphics.drawString(this.font, this.title, leftPos + 8, topPos + 8, 4210752, false);
 
         int yOffset = 30;
         for (S2CProfilePacket.ProfileData data : profileData) {
-            guiGraphics.drawString(this.font, data.title.getString() + ": " + data.value.getString(), leftPos + 15, topPos + yOffset, 0xFFFFFF, true);
+            guiGraphics.drawString(this.font, data.title.getString() + ": " + data.value.getString(), leftPos + 15,
+                    topPos + yOffset, 0xFFFFFF, true);
             yOffset += 15;
         }
 

@@ -10,3 +10,5 @@
 - **Main Class**: Renamed `ExampleMod` to `ProfileMod` and cleaned up template registry code.
 - **Licensing**: Changed project license to LGPL 3.0.
 - **CI/CD Automation**: Created a GitHub Actions workflow for automatic Maven publishing to GitHub Packages.
+- **Publishing Fix**: Resolved 422 error on GitHub Packages by standardizing project/artifact names and adding POM metadata.
+- **Code Cleanup**: Resolved deprecation warnings for `FMLJavaModLoadingContext` and `ResourceLocation`.

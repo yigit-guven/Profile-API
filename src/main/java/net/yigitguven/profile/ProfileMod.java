@@ -10,20 +10,17 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
 @Mod(ProfileMod.MODID)
-public class ProfileMod
-{
+public class ProfileMod {
     public static final String MODID = "profile";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public ProfileMod()
-    {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+    public ProfileMod(FMLJavaModLoadingContext context) {
+        IEventBus modEventBus = context.getModEventBus();
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(ProfileNetwork::init);
         LOGGER.info("Profile API Initialized");
     }
