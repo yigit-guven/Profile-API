@@ -9,8 +9,8 @@ import net.minecraft.resources.ResourceLocation;
 import java.util.List;
 
 public class ProfileScreen extends Screen {
-    private static final ResourceLocation BACKGROUND = new ResourceLocation(
-            "minecraft:textures/gui/demo_background.png");
+    private static final ResourceLocation BACKGROUND = new ResourceLocation("minecraft",
+            "textures/gui/demo_background.png");
     private final List<S2CProfilePacket.ProfileData> profileData;
     private int guiWidth = 248;
     private int guiHeight = 166;

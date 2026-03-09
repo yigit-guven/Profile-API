@@ -11,7 +11,7 @@ import net.minecraft.world.entity.player.Player;
 public class ProfileNetwork {
     private static final String PROTOCOL_VERSION = "1";
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
-            new ResourceLocation("profile:main"),
+            new ResourceLocation("profile", "main"),
             () -> PROTOCOL_VERSION,
             PROTOCOL_VERSION::equals,
             PROTOCOL_VERSION::equals);

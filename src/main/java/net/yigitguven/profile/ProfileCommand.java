@@ -1,13 +1,11 @@
 package net.yigitguven.profile;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.arguments.StringArgumentType;
 import net.yigitguven.profile.network.ProfileNetwork;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.player.Player;
 
 public class ProfileCommand {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {

@@ -36,7 +36,6 @@ public class ProfileMod {
 
             // Sample Component for Testing: Shows player health
             ProfileRegistry.register(player -> new ProfileComponent() {
-                @Override
                 public ResourceLocation getId() {
                     return new ResourceLocation("profile", "health");
                 }
@@ -54,7 +53,6 @@ public class ProfileMod {
 
             // Sample Component for Testing: Shows player experience level
             ProfileRegistry.register(player -> new ProfileComponent() {
-                @Override
                 public ResourceLocation getId() {
                     return new ResourceLocation("profile", "experience");
                 }
