@@ -1,12 +1,26 @@
-- **Profile UI Overhaul**:
-    - Added real-time rendering of the target player's character model.
-    - Added display of the target player's equipped armor items (helmet, chestplate, leggings, boots).
-    - Custom background rendering with configurable colors.
-- **New Configuration Options**:
-    - `showPlayerModel`: Toggle visibility of the player character.
-    - `backgroundColor`: Customize the UI background color (Hex).
-    - `textColor`: Customize the data text color (Hex).
-    - `modelScale`: Adjust the size of the rendered player model.
-- **Networking**: Updated network protocol to transmit player UUID, name, and armor data.
-- Fixed CurseForge project links and download badge in `README.md`.
-- Bumped version to 1.0.3.
+- **UI Refinements**:
+  - Repositioned player model higher and slightly right to align with armor slots.
+  - Repositioned "Appearance" header for better framing.
+  - Vertically centered skin head icon with the profile title.
+- **Dynamic Colored Stats**:
+  - Health values now appear in **Red**.
+  - Experience values now appear in **Green**.
+- **Interactive Armor Slots**:
+  - Added hoverable tooltips for armor items (configurable via `enableArmorTooltips`).
+- **Profile Title Color**: Title now matches the player's team or name color from the Tab list.
+- **Fixed Icons**: Updated Experience icon to use the correct XP orb sprite.
+- **Premium UI Polish**: Introduced structured panels and framed areas for a more professional look.
+- **Framed Player Model**: Added a recessed, 3D-effect frame for the player character display.
+- **Row-Based Data Layout**: Stats are now organized into subtle, readable rows with better vertical spacing.
+- **Enhanced Typography**: Added color-coding for labels (Gold) and values (White), plus a highlighted title (Cyan).
+- **Appearance Header**: Added a dedicated sub-header for the player model area.
+- **New Configuration**: Added `useFancyPanels` and `highlightColor` for further customization.
+- **Vanilla UI Style**: New configurable option to use standard Minecraft GUI textures for the Profile Screen.
+- **Player Skin Heads**: Added 2D skin head rendering next to player names in the UI.
+- **Dynamic Icons**: Automatic heart, hunger, and XP icons for relevant profile data entries.
+- **Enhanced Configuration**: Added `vanillaStyleUi`, `showSkinHead`, and `showIcons` toggles.
+- **Documentation**: Updated README with full feature list and updated developer API examples.
+- Improved UI spacing and alignment for data entries.
+- Added null-safety checks for client-side player connection states.
+- Bumped version to 1.0.4.
+- Re-centered character model for better framing.

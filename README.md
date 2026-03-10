@@ -8,28 +8,32 @@
   [![Discord](https://img.shields.io/discord/123456789012345678?style=for-the-badge&logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/gNajXYku5z)
   [![License](https://img.shields.io/badge/License-LGPL_3.0-blue.svg?style=for-the-badge)](https://www.gnu.org/licenses/lgpl-3.0.txt)
 
-  **A modern library for Minecraft that adds a customizable player profile UI.**
+  **A highly customizable Profile UI library for Minecraft.**
 </div>
 
 ---
 
 ## 🌟 Overview
 
-**Profile API** is a developer-focused library mod that adds a sleek, modern UI accessible via right-clicking on players. It serves as a central hub for other mods to display player-specific data, stats, and achievements in a clean, unified interface.
+**Profile API** is more than just a stats viewer—it's a polished, modular UI framework for Minecraft. By right-clicking any player, you gain access to a beautifully structured profile screen showing real-time character models, equipment, and dynamic data from across the modding ecosystem.
 
-### ✨ Features
-- 🖱️ **Right-Click Interaction**: Seamlessly open profiles by interacting with players.
-- 🧩 **Modular API**: Easily register custom cards (Health, Stats, Level, Rank, etc.).
-- 🌐 **Network Efficient**: Syncs data only when requested to minimize server load.
-- 🎨 **Modern UI**: Clean, minimalist design inspired by modern web portfolios.
+### ✨ Key Features
+
+- 👤 **Real-time 3D Preview**: See players in their full glory with high-resolution, centered 3D model rendering.
+- 🛡️ **Interactive Equipment**: View equipped armor slots with hoverable tooltips showing names, enchantments, and stats.
+- 📊 **Structured Data**: Information is organized into clean, row-based layouts with subtle highlights.
+- 🎨 **Premium Visuals**:
+  - **Fancy Panels**: Framed UI elements for a professional, "embedded" feel.
+  - **Conditional Coloring**: Health is Red, Experience is Green, and Titles match Team colors.
+  - **Dynamic Icons**: Automatic icons for Health, Hunger, and XP (with custom Icon support for developers).
+- ⚙️ **Ultra Configurable**: Toggle almost every visual element—from the 3D model to the "Fancy" panel styling.
+- 🧩 **Modular API**: Developers can register custom "Profile Components" in seconds.
 
 ---
 
 ## 🛠️ For Developers
 
 ### Adding to your project (Gradle)
-
-Add the following to your `build.gradle`:
 
 ```gradle
 repositories {
@@ -46,8 +50,6 @@ dependencies {
 
 ### Registering a Component
 
-Other mods can contribute data to the profile screen using the `ProfileRegistry`:
-
 ```java
 ProfileRegistry.register(player -> new ProfileComponent() {
     @Override
@@ -62,8 +64,13 @@ ProfileRegistry.register(player -> new ProfileComponent() {
 
     @Override
     public Component getValue() { 
-        // Dynamic data based on the player entity
-        return Component.literal("Lv. 99"); 
+        // Can be dynamic colored text
+        return Component.literal("Lv. 99").withStyle(ChatFormatting.GOLD); 
+    }
+    
+    @Override
+    public ResourceLocation getIcon() {
+        return new ResourceLocation("yourmod", "textures/gui/strength_icon.png");
     }
 });
 ```
@@ -77,9 +84,9 @@ ProfileRegistry.register(player -> new ProfileComponent() {
 2. Drop the `.jar` file into your Minecraft `mods` folder.
 3. Ensure you have the correct version of **Mod Loader** installed.
 
-### How to use
+### Controls
 - **Right-Click** any player to view their profile.
-- **Debug Command**: Use `/profile view <player_name>` to view your own or others' profiles via command.
+- **Command**: `/profile view <player>` (supports self-view and others).
 
 ---
 
