@@ -1,4 +1,12 @@
-- **Brand Identity**: Created a sleek "Profile API" text banner logo for use in mod repositories and documentation.
-- **mods.toml**: Added issue tracker URL and display URL.
-- **Version**: Updated to 1.0.2
-- **Documentation**: Created a `README.md` with banners, badges, and project links.
+- **Profile UI Overhaul**:
+    - Added real-time rendering of the target player's character model.
+    - Added display of the target player's equipped armor items (helmet, chestplate, leggings, boots).
+    - Custom background rendering with configurable colors.
+- **New Configuration Options**:
+    - `showPlayerModel`: Toggle visibility of the player character.
+    - `backgroundColor`: Customize the UI background color (Hex).
+    - `textColor`: Customize the data text color (Hex).
+    - `modelScale`: Adjust the size of the rendered player model.
+- **Networking**: Updated network protocol to transmit player UUID, name, and armor data.
+- Fixed CurseForge project links and download badge in `README.md`.
+- Bumped version to 1.0.3.

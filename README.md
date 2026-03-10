@@ -2,7 +2,7 @@
   <img src="src/main/resources/logo.png" alt="Profile API Banner" width="800">
   
   [![Modrinth Downloads](https://img.shields.io/modrinth/dt/profile?style=for-the-badge&logo=modrinth&color=24b473)](https://modrinth.com/mod/profile)
-  [![CurseForge Downloads](https://img.shields.io/curseforge/dt/profile-api?style=for-the-badge&logo=curseforge&color=f16436)](https://www.curseforge.com/minecraft/mc-mods/profile)
+  [![CurseForge Downloads](https://img.shields.io/curseforge/dt/1482084?style=for-the-badge&logo=curseforge&color=f16436)](https://www.curseforge.com/minecraft/mc-mods/profile)
   [![GitHub Issues](https://img.shields.io/github/issues/yigit-guven/Profile-API?style=for-the-badge&logo=github&color=brightgreen)](https://github.com/yigit-guven/Profile-API/issues)
   [![GitHub Stars](https://img.shields.io/github/stars/yigit-guven/Profile-API?style=for-the-badge&logo=github&color=dfb317)](https://github.com/yigit-guven/Profile-API/stargazers)
   [![Discord](https://img.shields.io/discord/123456789012345678?style=for-the-badge&logo=discord&logoColor=white&label=Discord&color=5865F2)](https://discord.gg/gNajXYku5z)
@@ -73,7 +73,7 @@ ProfileRegistry.register(player -> new ProfileComponent() {
 ## 📦 How 2 Play?
 
 ### Installation
-1. Download the latest version from [Modrinth](https://modrinth.com/mod/profile) or [CurseForge](https://modrinth.com/mod/profile).
+1. Download the latest version from [Modrinth](https://modrinth.com/mod/profile) or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/profile).
 2. Drop the `.jar` file into your Minecraft `mods` folder.
 3. Ensure you have the correct version of **Mod Loader** installed.
 

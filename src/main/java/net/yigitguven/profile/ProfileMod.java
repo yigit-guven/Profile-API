@@ -24,6 +24,9 @@ public class ProfileMod {
         modEventBus.addListener(this::commonSetup);
         MinecraftForge.EVENT_BUS.addListener(this::onRegisterCommands);
         MinecraftForge.EVENT_BUS.register(this);
+
+        net.minecraftforge.fml.ModLoadingContext.get()
+                .registerConfig(net.minecraftforge.fml.config.ModConfig.Type.CLIENT, Config.SPEC);
     }
 
     private void onRegisterCommands(RegisterCommandsEvent event) {

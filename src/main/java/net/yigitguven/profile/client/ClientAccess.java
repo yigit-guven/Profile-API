@@ -5,7 +5,7 @@ import net.minecraft.client.Minecraft;
 import java.util.List;
 
 public class ClientAccess {
-    public static void openProfileScreen(List<S2CProfilePacket.ProfileData> data) {
-        Minecraft.getInstance().setScreen(new ProfileScreen(data));
+    public static void openProfileScreen(S2CProfilePacket packet) {
+        Minecraft.getInstance().setScreen(new ProfileScreen(packet));
     }
 }

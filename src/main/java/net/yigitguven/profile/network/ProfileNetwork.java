@@ -22,7 +22,14 @@ public class ProfileNetwork {
     }
 
     public static void sendProfileToClient(ServerPlayer receiver, Player targetPlayer) {
+        java.util.List<net.minecraft.world.item.ItemStack> armor = new java.util.ArrayList<>();
+        targetPlayer.getArmorSlots().forEach(armor::add);
+
         CHANNEL.send(PacketDistributor.PLAYER.with(() -> receiver),
-                new S2CProfilePacket(ProfileRegistry.getComponents(targetPlayer)));
+                new S2CProfilePacket(
+                        targetPlayer.getUUID(),
+                        targetPlayer.getScoreboardName(),
+                        armor,
+                        ProfileRegistry.getComponents(targetPlayer)));
     }
 }

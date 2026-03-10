@@ -7,12 +7,21 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.network.NetworkEvent;
 import java.util.function.Supplier;
+import net.minecraft.world.item.ItemStack;
+import java.util.UUID;
 import java.util.ArrayList;
 
 public class S2CProfilePacket {
+    private final UUID targetUuid;
+    private final String targetName;
+    private final List<ItemStack> armorItems;
     private final List<ProfileData> data;
 
-    public S2CProfilePacket(List<ProfileComponent> components) {
+    public S2CProfilePacket(UUID targetUuid, String targetName, List<ItemStack> armorItems,
+            List<ProfileComponent> components) {
+        this.targetUuid = targetUuid;
+        this.targetName = targetName;
+        this.armorItems = armorItems;
         this.data = new ArrayList<>();
         for (ProfileComponent comp : components) {
             this.data.add(new ProfileData(comp.getId(), comp.getTitle(), comp.getValue(), comp.getIcon()));
@@ -20,15 +29,20 @@ public class S2CProfilePacket {
     }
 
     public S2CProfilePacket(FriendlyByteBuf buf) {
+        this.targetUuid = buf.readUUID();
+        this.targetName = buf.readUtf();
+        this.armorItems = buf.readCollection(ArrayList::new, FriendlyByteBuf::readItem);
         this.data = buf.readList(b -> new ProfileData(
-            b.readResourceLocation(),
-            b.readComponent(),
-            b.readComponent(),
-            b.readBoolean() ? b.readResourceLocation() : null
-        ));
+                b.readResourceLocation(),
+                b.readComponent(),
+                b.readComponent(),
+                b.readBoolean() ? b.readResourceLocation() : null));
     }
 
     public void encode(FriendlyByteBuf buf) {
+        buf.writeUUID(targetUuid);
+        buf.writeUtf(targetName);
+        buf.writeCollection(armorItems, FriendlyByteBuf::writeItem);
         buf.writeCollection(data, (b, d) -> {
             b.writeResourceLocation(d.id);
             b.writeComponent(d.title);
@@ -42,10 +56,26 @@ public class S2CProfilePacket {
         });
     }
 
+    public UUID getTargetUuid() {
+        return targetUuid;
+    }
+
+    public String getTargetName() {
+        return targetName;
+    }
+
+    public List<ItemStack> getArmorItems() {
+        return armorItems;
+    }
+
+    public List<ProfileData> getData() {
+        return data;
+    }
+
     public void handle(Supplier<NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
             // Handle on client: Open Screen with this data
-            net.yigitguven.profile.client.ClientAccess.openProfileScreen(data);
+            net.yigitguven.profile.client.ClientAccess.openProfileScreen(this);
         });
         ctx.get().setPacketHandled(true);
     }
